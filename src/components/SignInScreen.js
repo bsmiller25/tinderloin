@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import 'firebase/auth';
 
 import CardDeck from './CardDeck'
+import ProfileForm from './ProfileForm'
 
 const uiConfig = {
   signInFlow: 'redirect',
@@ -39,6 +40,7 @@ function SignInScreen() {
         <CardDeck />
         </div>
       <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
+      <ProfileForm />
     </div>
   );
 }
