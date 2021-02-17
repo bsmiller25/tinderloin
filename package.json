@@ -9,6 +9,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-firebaseui": "^4.1.0",
+    "react-hook-form": "^6.15.1",
     "react-ios-switch": "^0.1.19",
     "react-modal": "^3.12.1",
     "react-scripts": "3.2.0",
