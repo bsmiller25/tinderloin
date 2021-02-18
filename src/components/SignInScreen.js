@@ -34,11 +34,11 @@ function SignInScreen() {
 
   return (
     <div>
-      <p>Welcome {firebase.auth().currentUser.displayName}!</p>
+      <p>Serving up fresh cuts for {firebase.auth().currentUser.displayName}</p>
       <div className='app'>
         <CardDeck />
         </div>
-      <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
+      <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
     </div>
   );
 }
