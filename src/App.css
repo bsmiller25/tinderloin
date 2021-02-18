@@ -10,7 +10,7 @@
   --background-dark: #011627;
   --accent: #FE938C;
   --accent2: #4281A4;
- background: linear-gradient(var(--background-light), var(--background-dark));
+ background: --background-light;
 }
 
 #root>div {
