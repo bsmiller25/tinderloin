@@ -12,7 +12,6 @@ function ButcherShop () {
   
   return (
     <div>
-      
       { freshCutsActive ? <FreshCuts /> : <ProfileForm />}
       <br/>
       <div className="menubar">

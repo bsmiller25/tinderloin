@@ -56,6 +56,7 @@ function FreshCuts () {
       {/* <h1>{freshCuts.length != 0 && freshCuts[0].username}</h1> */}
 
       <div className='cardContainer'>
+        <p>Fresh cuts for {firebase.auth().currentUser.displayName}</p>
         {characters.map((character) =>
           <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
             <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>

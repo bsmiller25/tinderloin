@@ -36,33 +36,33 @@ function ProfileForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-            <label htmlFor="username">Username</label>
-            <input name="username" placeholder="charcuteriebabe91" ref={register} />
+    <form onSubmit={handleSubmit(onSubmit)} className="profileForm">
+        <div className="profileFormGroup">
+            <label htmlFor="username" className="profileFormLabel">Username</label>
+            <input name="username" placeholder="charcuteriebabe91" ref={register} className="profileFormInput" />
         </div>
 
-        <div>
-            <label htmlFor="city">City</label>
-            <input name="city" placeholder="Washington" ref={register} />
+        <div className="profileFormGroup">
+            <label htmlFor="city" className="profileFormLabel">City</label>
+            <input name="city" placeholder="Washington" ref={register} className="profileFormInput" />
         </div>
 
-        <div>
-            <label htmlFor="state">State</label>
-            <input name="state" placeholder="DC" ref={register} />
+        <div className="profileFormGroup">
+            <label htmlFor="state" className="profileFormLabel">State</label>
+            <input name="state" placeholder="DC" ref={register} className="profileFormInput" />
         </div>
 
-        <div>
-            <label htmlFor="profession">Profession</label>
-            <input name="profession" placeholder="What would you say you do around here?" ref={register} />
+        <div className="profileFormGroup">
+            <label htmlFor="cut" className="profileFormLabel">Favorite cut of meat</label>
+            <input name="cut" placeholder="Ribeye" ref={register} className="profileFormInput" />
         </div>
 
-        <div>
-            <label htmlFor="bio">Bio</label>
-            <input name="bio" placeholder="Tell us a little about yourself" ref={register} />
+        <div className="profileFormGroup">
+            <label htmlFor="bio" className="profileFormLabel">Bio</label>
+            <textarea name="bio" placeholder="Tell us a little about yourself" ref={register} className="profileFormInput" />
         </div>
 
-        <button type="submit">Submit</button>
+        <button type="submit" className="formButton">Submit</button>
     </form>
   );
 }
