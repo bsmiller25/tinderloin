@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './App.css'
+import Icon from './components/Icon'
+import Logo from './components/Logo'
 import SignInScreen from './components/SignInScreen'
 
 class App extends React.Component {
@@ -14,7 +16,10 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
-        <h1>Tinderloin</h1>
+        <Icon />
+        <br />
+        <Logo />
+        <br />
         <SignInScreen />
       </div>
     )

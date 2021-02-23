@@ -10,7 +10,7 @@
   --background-dark: #011627;
   --accent: #FE938C;
   --accent2: #4281A4;
- background: linear-gradient(var(--background-light), var(--background-dark));
+ background: --background-light;
 }
 
 #root>div {
@@ -61,7 +61,6 @@ h3 {
     font-size: 16px;
     line-height: 19px;
 }
-
     
 .swipe {
   position: absolute;
@@ -79,8 +78,8 @@ h3 {
   width: 80vw;
   max-width: 260px;
   height: 300px;
-  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
-  border-radius: 20px;
+  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.1);
+  border-radius: 8px;
   background-size: cover;
   background-position: center;
 }
@@ -98,13 +97,15 @@ h3 {
   position: absolute;
   bottom: 0;
   margin: 10px;
-  color: var(--primary);
+  font-weight: 900;
+  color: var(--background-light);
+  text-shadow: 1px 1px var(--background-dark);
 }
 
 .card h4 {
     font-family: Inter;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 16px;
     line-height: 19px;
     
@@ -112,7 +113,8 @@ h3 {
     bottom: 0;
     right: 0;
     margin: 10px;
-    color: var(--primary);
+    color: var(--background-light);
+    text-shadow: 1px 1px var(--background-dark);
 }
 
 .infoText {
@@ -190,4 +192,61 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     width: 500px;
+}
+
+.menubar {
+    display: flex;
+    flex-direction: row;
+    width: 220px;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leftMenu {
+    width: 110px;
+    border-right: 1px solid var(--primary);
+}
+
+.menubarSliceKnifeActive {
+    position: relative;
+    left: 0px;
+    width: 32px;
+    height: 34.67px;
+    top: 7px;
+    fill: var(--primary);
+}
+.menubarSliceKnifeInactive {
+    position: relative;
+    left: 0px;
+    width: 32px;
+    height: 34.67px;
+    top: 7px;
+    fill: #BDBDBD;
+}
+
+.rightMenu {
+    width: 110px;
+    border-left: 1px solid var(--primary);
+}
+
+.menubarProfileIconActive {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    top: 8px;
+    fill: var(--primary);
+}
+.menubarProfileIconInactive {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    top: 8px;
+    fill: #BDBDBD;
+}
+
+
+.menubarSplit {
+    border: 1px solid var(--primary);
+    height: 100%;
 }

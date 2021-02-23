@@ -10,7 +10,7 @@ import FreshCut from '../data/FreshCut'
 var db = require('../data/prof.json').profiles
 console.log(db)
 
-function CardDeck () {
+function FreshCuts () {
   const characters = db
   const [lastDirection, setLastDirection] = useState()
   const [freshCuts, setFreshCuts] = useState([])
@@ -52,12 +52,14 @@ function CardDeck () {
       <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
       <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
 
+      {/* example of how you would use data from firebase: */}
+      {/* <h1>{freshCuts.length != 0 && freshCuts[0].username}</h1> */}
+
       <div className='cardContainer'>
         {characters.map((character) =>
           <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
             <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
               <h3>{character.name}</h3>
-              <h1>{freshCuts.length != 0 && freshCuts[0].username}</h1>
               <h4 onClick={() => clickMore(character)}>See more</h4>
               <ReactModal
                 className="Modal"
@@ -81,4 +83,4 @@ function CardDeck () {
   )
 }
 
-export default CardDeck
+export default FreshCuts

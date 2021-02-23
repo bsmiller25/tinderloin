@@ -3,8 +3,7 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
 import 'firebase/auth';
 
-import CardDeck from './CardDeck'
-import ProfileForm from './ProfileForm'
+import ButcherShop from './ButcherShop'
 
 const uiConfig = {
   signInFlow: 'redirect',
@@ -35,12 +34,12 @@ function SignInScreen() {
 
   return (
     <div>
-      <p>Welcome {firebase.auth().currentUser.displayName}!</p>
+      <p>Serving up fresh cuts for {firebase.auth().currentUser.displayName}</p>
       <div className='app'>
-        <CardDeck />
-        </div>
-      <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
-      <ProfileForm />
+        <ButcherShop />
+	      <br />
+      </div>
+      <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
     </div>
   );
 }
