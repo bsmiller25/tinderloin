@@ -30,7 +30,7 @@ function ProfileForm() {
       username: formData.username,
       city: formData.city,
       state: formData.state,
-      profession: formData.profession,
+      cut: formData.cut,
       bio: formData.bio,
     });
   }
