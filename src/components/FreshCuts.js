@@ -10,7 +10,7 @@ import FreshCut from '../data/FreshCut'
 var db = require('../data/prof.json').profiles
 console.log(db)
 
-function CardDeck () {
+function FreshCuts () {
   const characters = db
   const [lastDirection, setLastDirection] = useState()
   const [freshCuts, setFreshCuts] = useState([])
@@ -83,4 +83,4 @@ function CardDeck () {
   )
 }
 
-export default CardDeck
+export default FreshCuts

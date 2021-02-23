@@ -193,3 +193,60 @@ h3 {
     margin-right: auto;
     width: 500px;
 }
+
+.menubar {
+    display: flex;
+    flex-direction: row;
+    width: 220px;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leftMenu {
+    width: 110px;
+    border-right: 1px solid var(--primary);
+}
+
+.menubarSliceKnifeActive {
+    position: relative;
+    left: 0px;
+    width: 32px;
+    height: 34.67px;
+    top: 7px;
+    fill: var(--primary);
+}
+.menubarSliceKnifeInactive {
+    position: relative;
+    left: 0px;
+    width: 32px;
+    height: 34.67px;
+    top: 7px;
+    fill: #BDBDBD;
+}
+
+.rightMenu {
+    width: 110px;
+    border-left: 1px solid var(--primary);
+}
+
+.menubarProfileIconActive {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    top: 8px;
+    fill: var(--primary);
+}
+.menubarProfileIconInactive {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    top: 8px;
+    fill: #BDBDBD;
+}
+
+
+.menubarSplit {
+    border: 1px solid var(--primary);
+    height: 100%;
+}
