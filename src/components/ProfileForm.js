@@ -8,6 +8,7 @@ function ProfileForm() {
     const { register, handleSubmit } = useForm();
 
     const [userProfile, setUserProfile] = useState();
+    const [submitStatus, setSubmitStatus] = useState(false);
 
     useEffect(() => {
         // early return if we've already fetched user profile, otherwise we'll create an infinite loop
@@ -21,7 +22,7 @@ function ProfileForm() {
     })
 
     const onSubmit = formData => {
-        console.log(formData);
+        setSubmitStatus(true);
         writeProfileToFirebase(formData);
     };
 
@@ -40,6 +41,7 @@ function ProfileForm() {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="profileForm">
             <h2>{firebase.auth().currentUser.displayName.split(" ")[0]}'s Profile</h2>
+            {submitStatus && <h3>Profile updated!</h3>}
             <div className="profileFormGroup">
                 <label htmlFor="username" className="profileFormLabel">Username</label>
                 <input name="username" placeholder="e.g. charcuteriebabe91" defaultValue={userProfile ? userProfile.username : ""}
