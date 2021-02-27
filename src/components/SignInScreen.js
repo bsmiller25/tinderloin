@@ -35,7 +35,6 @@ function SignInScreen() {
   return (
     <div>
       <ButcherShop />
-      <br />
       <button onClick={() => firebase.auth().signOut()} className="signoutButton">Sign out</button>
     </div>
   );

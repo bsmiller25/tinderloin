@@ -16,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
+	<br />
         <div style={{display: 'inline-block'}}>
 	  <Icon />
           <Logo />
