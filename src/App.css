@@ -10,7 +10,8 @@
   --background-dark: #011627;
   --accent: #FE938C;
   --accent2: #4281A4;
- background: --background-light;
+  --secondary-text: #8D8D8D;
+  background: linear-gradient(342.46deg, rgba(255, 114, 105, 0.21) 27.08%, rgba(255, 255, 255, 0) 100%), var(--background-light);;
 }
 
 #root>div {
@@ -237,6 +238,7 @@ h3 {
     top: 8px;
     fill: var(--primary);
 }
+
 .menubarProfileIconInactive {
     position: relative;
     width: 32px;
@@ -245,8 +247,65 @@ h3 {
     fill: #BDBDBD;
 }
 
-
 .menubarSplit {
     border: 1px solid var(--primary);
     height: 100%;
+}
+
+.profileForm {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.profileFormGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+}
+
+.profileFormInput {
+  font-size: 16px;
+  color: var(--secondary-text);
+  border: 1px solid var(--secondary-text);
+  border-radius: 4px;
+  vertical-align: text-top;
+  margin-bottom: 10px;
+}
+
+.profileFormLabel {
+  width: 100%;
+  margin-bottom: 5px;
+  font-family: Inter;
+  font-style: normal;
+  font-size: 14px;
+  text-align: left;
+}
+
+textarea {
+  font-family: Inter;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 16px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.formButton {
+  color: var(--background-light);
+  background: #FD6B62;
+  border: 0px;
+}
+
+.signoutButton {
+  color: var(--primary);
+  background: transparent;
+  border: 2px solid var(--primary);
 }

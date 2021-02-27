@@ -34,12 +34,9 @@ function SignInScreen() {
 
   return (
     <div>
-      <p>Serving up fresh cuts for {firebase.auth().currentUser.displayName}</p>
-      <div className='app'>
-        <ButcherShop />
-	<br />
-        </div>
-      <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
+      <ButcherShop />
+      <br />
+      <button onClick={() => firebase.auth().signOut()} className="signoutButton">Sign out</button>
     </div>
   );
 }
