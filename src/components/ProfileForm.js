@@ -28,8 +28,10 @@ function ProfileForm() {
     function writeProfileToFirebase(formData) {
         firebase.database().ref("users/" + firebase.auth().currentUser.uid).set({
             username: formData.username,
+            firstname: firebase.auth().currentUser.displayName.split(" ")[0],
+            photo: firebase.auth().currentUser.photoURL,
             city: formData.city,
-            state: formData.state,
+            age: formData.age,
             cut: formData.cut,
             bio: formData.bio,
         });
@@ -45,13 +47,13 @@ function ProfileForm() {
             </div>
 
             <div className="profileFormGroup">
-                <label htmlFor="city" className="profileFormLabel">City</label>
-                <input name="city" value={userProfile != undefined && userProfile.city} ref={register} className="profileFormInput" />
+                <label htmlFor="age" className="profileFormLabel">Age</label>
+                <input name="age" value={userProfile != undefined && userProfile.age} ref={register} className="profileFormInput" />
             </div>
 
             <div className="profileFormGroup">
-                <label htmlFor="state" className="profileFormLabel">State</label>
-                <input name="state" value={userProfile != undefined && userProfile.state} ref={register} className="profileFormInput" />
+                <label htmlFor="city" className="profileFormLabel">City</label>
+                <input name="city" value={userProfile != undefined && userProfile.city} ref={register} className="profileFormInput" />
             </div>
 
             <div className="profileFormGroup">
