@@ -270,12 +270,12 @@ h3 {
   border: 1px solid var(--secondary-text);
   border-radius: 4px;
   vertical-align: text-top;
+  margin-bottom: 10px;
 }
 
 .profileFormLabel {
   width: 100%;
   margin-bottom: 5px;
-  margin-top: 10px;
   font-family: Inter;
   font-style: normal;
   font-size: 14px;
