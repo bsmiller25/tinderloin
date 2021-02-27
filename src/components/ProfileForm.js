@@ -8,6 +8,7 @@ function ProfileForm() {
     const { register, handleSubmit } = useForm();
 
     const [userProfile, setUserProfile] = useState();
+    const [submitStatus, setSubmitStatus] = useState(false);
 
     useEffect(() => {
         // early return if we've already fetched user profile, otherwise we'll create an infinite loop
@@ -21,7 +22,7 @@ function ProfileForm() {
     })
 
     const onSubmit = formData => {
-        console.log(formData);
+        setSubmitStatus(true);
         writeProfileToFirebase(formData);
     };
 
@@ -40,31 +41,32 @@ function ProfileForm() {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="profileForm">
             <h2>{firebase.auth().currentUser.displayName.split(" ")[0]}'s Profile</h2>
+            {submitStatus && <h3>Profile updated!</h3>}
             <div className="profileFormGroup">
                 <label htmlFor="username" className="profileFormLabel">Username</label>
-                <input name="username" placeholder="e.g. charcuteriebabe91" value={userProfile != undefined && userProfile.username}
+                <input name="username" placeholder="e.g. charcuteriebabe91" defaultValue={userProfile ? userProfile.username : ""}
                     ref={register} className="profileFormInput" />
             </div>
 
             <div className="profileFormGroup">
                 <label htmlFor="age" className="profileFormLabel">Age</label>
-                <input name="age" value={userProfile != undefined && userProfile.age} ref={register} className="profileFormInput" />
+                <input name="age" defaultValue={userProfile ? userProfile.age : ""} ref={register} className="profileFormInput" />
             </div>
 
             <div className="profileFormGroup">
                 <label htmlFor="city" className="profileFormLabel">City</label>
-                <input name="city" value={userProfile != undefined && userProfile.city} ref={register} className="profileFormInput" />
+                <input name="city" defaultValue={userProfile ? userProfile.city : ""} ref={register} className="profileFormInput" />
             </div>
 
             <div className="profileFormGroup">
                 <label htmlFor="cut" className="profileFormLabel">Favorite cut of meat</label>
-                <input name="cut" placeholder="e.g. Ribeye" value={userProfile != undefined && userProfile.cut}
+                <input name="cut" placeholder="e.g. Ribeye" defaultValue={userProfile ? userProfile.cut : ""}
                     ref={register} className="profileFormInput" />
             </div>
 
             <div className="profileFormGroup">
                 <label htmlFor="bio" className="profileFormLabel">Bio</label>
-                <textarea name="bio" placeholder="Tell us a little about yourself" value={userProfile != undefined && userProfile.bio}
+                <textarea name="bio" placeholder="Tell us a little about yourself..." defaultValue={userProfile ? userProfile.bio : ""}
                     ref={register} className="profileFormInput" />
             </div>
 
