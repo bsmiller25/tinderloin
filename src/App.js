@@ -16,9 +16,11 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
-        <Icon />
-        <br />
-        <Logo />
+	<br />
+        <div style={{display: 'inline-block'}}>
+	  <Icon />
+          <Logo />
+	</div>
         <br />
         <SignInScreen />
       </div>
