@@ -1,10 +1,21 @@
+html {
+  height: 100%;
+  width: 100%
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: Inter;
+  font-style: normal;
+}
+
 #root {
+  height: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
-  overflow: hidden;
   --primary: #9B1D20;
   --background-light: #FEFCF5;
   --background-dark: #011627;
@@ -14,60 +25,50 @@
   background: linear-gradient(342.46deg, rgba(255, 114, 105, 0.21) 27.08%, rgba(255, 255, 255, 0) 100%), var(--background-light);;
 }
 
-#root>div {
+.app {
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.app>div {
+.tinderloin {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
 }
 
-.row {
-  flex-direction: row !important;
-}
-
-.row>* {
-  margin: 5px;
+.tinderloin > *
+{
+  padding: 5px; /* creates space between logo and name */
 }
 
 h1 {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 32px;
-    line-height: 39px;
-    letter-spacing: 0.041em;
-    color: var(--primary);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 0.041em;
+  color: var(--primary);
 }
 
 h2 {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
-    color: var(--primary);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--primary);
 }
 
 h3 {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--background-dark);
 }
-    
+
 .swipe {
-    position: absolute;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    
+  position: absolute;
+  margin-left: 20px;
 }
 
 .board {
@@ -82,8 +83,16 @@ h3 {
 .card {
   width: 95vw;
   max-width: 260px;
-  height: 350px;
+  height: 370px;
   background: var(--background-light);
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+}
+
+.cardHeader {
+  margin: 0;
+  padding: 10px;
+  text-align: left;
 }
 
 .card-img {
@@ -91,44 +100,21 @@ h3 {
   width: 80vw;
   max-width: 260px;
   height: 250px;
-  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.1);
-  border-radius: 8px;
   background-size: cover;
   background-position: center;
 }
-    
 
-.cardContent {
-  width: 100%;
-  height: 100%;
+.cardDescription {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+  margin: 10px;
+  color: var(--background-dark);
 }
 
 .swipe:last-of-type {
 
-}
-
-.card h3 {
-  position: absolute;
-  bottom: 0;
-  margin: 10px;
-  font-weight: 900;
-  color: var(--background-light);
-  text-shadow: 1px 1px var(--background-dark);
-}
-
-.card h4 {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-    
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    color: var(--background-light);
-    text-shadow: 1px 1px var(--background-dark);
 }
 
 .infoText {
@@ -270,13 +256,19 @@ h3 {
 .profileForm {
   width: 100%;
   margin-top: 20px;
-  height: 445px;
 }
 
 .profileFormGroup {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  text-align: left;
+}
+
+.profileFormLabel {
+  margin-bottom: 5px;
+  font-family: Inter;
+  font-style: normal;
+  font-size: 14px;
   text-align: left;
 }
 
@@ -287,15 +279,7 @@ h3 {
   border-radius: 4px;
   vertical-align: text-top;
   margin-bottom: 10px;
-}
-
-.profileFormLabel {
-  width: 100%;
-  margin-bottom: 5px;
-  font-family: Inter;
-  font-style: normal;
-  font-size: 14px;
-  text-align: left;
+  min-width: 70vw;
 }
 
 textarea {

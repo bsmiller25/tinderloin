@@ -28,9 +28,8 @@ function ProfileForm() {
 
     function writeProfileToFirebase(formData) {
         firebase.database().ref("users/" + firebase.auth().currentUser.uid).set({
-            username: formData.username,
             firstname: firebase.auth().currentUser.displayName.split(" ")[0],
-            photo: firebase.auth().currentUser.photoURL,
+            photo: formData.photo === "" ? firebase.auth().currentUser.photoURL : formData.photo,
             city: formData.city,
             age: formData.age,
             cut: formData.cut,
@@ -43,8 +42,8 @@ function ProfileForm() {
             <h2>{firebase.auth().currentUser.displayName.split(" ")[0]}'s Profile</h2>
             {submitStatus && <h3>Profile updated!</h3>}
             <div className="profileFormGroup">
-                <label htmlFor="username" className="profileFormLabel">Username</label>
-                <input name="username" placeholder="e.g. charcuteriebabe91" defaultValue={userProfile ? userProfile.username : ""}
+                <label htmlFor="photo" className="profileFormLabel">Link to profile pic</label>
+                <input name="photo" placeholder="Leave this blank to use your Google pic" defaultValue={userProfile ? userProfile.photo : ""}
                     ref={register} className="profileFormInput" />
             </div>
 
@@ -61,13 +60,13 @@ function ProfileForm() {
             <div className="profileFormGroup">
                 <label htmlFor="cut" className="profileFormLabel">Favorite cut of meat</label>
                 <input name="cut" placeholder="e.g. Ribeye" defaultValue={userProfile ? userProfile.cut : ""}
-                    ref={register} className="profileFormInput" />
+                    ref={register} className="profileFormInput" maxLength="30" />
             </div>
 
             <div className="profileFormGroup">
-                <label htmlFor="bio" className="profileFormLabel">Bio</label>
-                <textarea name="bio" placeholder="Tell us a little about yourself..." defaultValue={userProfile ? userProfile.bio : ""}
-                    ref={register} className="profileFormInput" />
+                <label htmlFor="bio" className="profileFormLabel">Conversation starter</label>
+                <textarea name="bio" placeholder="What gives you the meat sweats?" defaultValue={userProfile ? userProfile.bio : ""}
+                    ref={register} className="profileFormInput" maxLength="30" />
             </div>
 
             <button type="submit" className="formButton">Submit</button>
