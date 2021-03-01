@@ -1,6 +1,6 @@
 export default class FreshCut
 {
-    constructor(uuid, username, firstname, photo, city, age, company, bio)
+    constructor(uuid, username, firstname, photo, city, age, cut, bio)
     {
         this.uuid = uuid;
         this.username = username;
@@ -8,7 +8,7 @@ export default class FreshCut
         this.photo = photo;
         this.age = age;
         this.city = city;
-        this.company = company;
+        this.cut = cut;
         this.bio = bio;
     }
 }
